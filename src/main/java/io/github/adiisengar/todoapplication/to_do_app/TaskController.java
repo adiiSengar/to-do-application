@@ -20,18 +20,12 @@ public class TaskController {
 
     @GetMapping("/{id}")
     public Optional<Task> getTask(@PathVariable Long id) {
-        return taskService.get TaskByID(id);
+        return taskService.getTaskById(id);
     }
-
-    @PutMapping
-    public Task updateTask(@RequestBody Task task) {
-        return taskService.addTask(task);
-    }
-
 
     @PutMapping("{id}")
     public Task updateTask(@PathVariable Long id, @RequestBody Task task) {
-        return taskService.updateTask(id task);
+        return taskService.updateTask(id, task);
     }
 
 
