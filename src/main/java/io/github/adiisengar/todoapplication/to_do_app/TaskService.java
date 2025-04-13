@@ -19,7 +19,7 @@ public class TaskService {
  public Task saveTask(Task task) {
      return taskRepository.save(task);
  }
- public void updateTask(Long id, Task taskDetails) {
+ public Task updateTask(Long id, Task taskDetails) {
 
      if (taskRepository.existsById(id)) {
          taskDetails.setId(id);
