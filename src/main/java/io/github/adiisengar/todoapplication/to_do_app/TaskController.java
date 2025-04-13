@@ -18,18 +18,18 @@ public class TaskController {
         return taskService.getAllTasks();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id")
     public Optional<Task> getTask(@PathVariable Long id) {
         return taskService.getTaskById(id);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("id")
     public Task updateTask(@PathVariable Long id, @RequestBody Task task) {
         return taskService.updateTask(id, task);
     }
 
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/id")
     public boolean deleteTask(@PathVariable Long id) {
     return taskService.deleteTask(id);
     }
