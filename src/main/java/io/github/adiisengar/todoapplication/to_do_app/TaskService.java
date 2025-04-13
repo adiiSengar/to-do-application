@@ -27,6 +27,7 @@ public class TaskService {
          return null;
 
      }
+ return taskRepository.save(taskDetails);}
      public boolean deleteTask(Long id){
          if(taskRepository.existsById(id)){
              taskRepository.deleteById(id);
@@ -37,5 +38,5 @@ public class TaskService {
      }
 
 
- }
-}
+
+
