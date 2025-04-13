@@ -14,7 +14,6 @@ public class TaskService {
      return taskRepository.findAll();
  }
  public Optional<Task> getTaskById(Long id) {
-
      return taskRepository.findById(id);
  }
  public Task saveTask(Task task) {
@@ -22,20 +21,16 @@ public class TaskService {
  }
  public void updateTask(Long id, Task taskDetails) {
 
-     if(taskRepository.existsById(id)){
+     if (taskRepository.existsById(id)) {
          taskDetails.setId(id);
-         return null;
-
      }
+     return null;
+ }
      public boolean deleteTask(Long id){
          if(taskRepository.existsById(id)){
              taskRepository.deleteById(id);
-             return true;}
-         return false;
-
+             return true;
          }
+         return false;
      }
-
-
- }
 }

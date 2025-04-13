@@ -3,14 +3,10 @@ package io.github.adiisengar.todoapplication.to_do_app;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-public class TaskController {
-package com.username;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+
+public class TaskController {
 
 @RestController
 @RequestMapping("/api/tasks")
@@ -46,7 +42,5 @@ public class Task {
     public boolean deleteTask(@PathVariable Long id) {
     return taskService.deleteTask(id);
     }
-
-
 
 }
