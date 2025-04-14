@@ -72,7 +72,7 @@ public class TaskController {
      * @param id the ID of the task to delete
      * @return true if the task was successfully deleted, false if not
      */
-    @DeleteMapping("{/id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         boolean deleted = taskService.deleteTask(id);
         if (deleted) {
