@@ -11,6 +11,7 @@ import java.util.Optional;
 @Service
 
 public class TaskService {
+
     @Autowired
     private TaskRepository taskRepository;
 
@@ -33,7 +34,6 @@ public class TaskService {
      */
 
     public Optional<Task> getTaskById(Long id) {
-
         return taskRepository.findById(id);
     }
 
@@ -51,7 +51,7 @@ public class TaskService {
     /**
      * Update an existing task using its ID.
      *
-     * @param id          ID of the task to update
+     * @param id      ID of the task to update
      * @param taskDetails New task data to update
      * @return Updated task object if ID exists, otherwise null
      */
@@ -60,6 +60,8 @@ public class TaskService {
 
         if (taskRepository.existsById(id)) {
             taskDetails.setId(id);
+            return taskRepository.save(taskDetails);
+        }
             return null;
         }
         /**
@@ -67,9 +69,6 @@ public class TaskService {
          * @param id ID of the task to delete
          * @return true if task was deleted, false if task does not exist
          */
-
-        return taskRepository.save(taskDetails);
-    }
 
     public boolean deleteTask(Long id) {
         if (taskRepository.existsById(id)) {
